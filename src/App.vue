@@ -27,9 +27,9 @@
   import RandomCode from "./components/RandomCode.vue";
   import Members from "./components/Members.vue";
   import Speech from "./components/Speech.vue";
-  import CodeData from "./data/code.json";
+  /* import CodeData from "./data/code.json";
   import SpeechData from "./data/speech.json";
-  import MembersData from "./data/members.json";
+  import MembersData from "./data/members.json"; */
 
   export default {
     name: "App",
@@ -40,9 +40,12 @@
     },
     data() {
       return {
-        code: CodeData.code,
-        speech: SpeechData,
-        members: MembersData.members,
+        code: process.env.VUE_APP_CODE.split(","),
+        speech: {
+          title: process.env.VUE_APP_SPEECH_TITLE,
+          body: process.env.VUE_APP_SPEECH_BODY,
+        },
+        members: process.env.VUE_APP_MEMBERS.split(","),
         showRandom: true,
         showMembers: false,
         showSpeach: false,
