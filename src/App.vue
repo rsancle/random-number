@@ -10,14 +10,14 @@
       <Speech :speech="speech" @add-color="addColor" />
     </section>
     <ul>
-      <li v-if="!showRandom">
-        <button @click="toggle('showRandom')">El Codi</button>
+      <li>
+        <button class="btn" @click="toggle('showRandom')">El Codi</button>
       </li>
-      <li v-if="!showMembers">
-        <button @click="toggle('showMembers')">Els Amics</button>
+      <li>
+        <button class="btn" @click="toggle('showMembers')">Els Amics</button>
       </li>
-      <li v-if="!showSpeach">
-        <button @click="toggle('showSpeach')">El Discurs</button>
+      <li>
+        <button class="btn" @click="toggle('showSpeach')">El Discurs</button>
       </li>
     </ul>
   </main>
@@ -51,11 +51,10 @@
     },
     methods: {
       toggle(button) {
-        const value = !this[button];
         this.showRandom = false;
         this.showMembers = false;
         this.showSpeach = false;
-        this[button] = value;
+        this[button] = true;
       },
       addColor(color) {
         this.backgroundClass = "background-" + color;
@@ -71,6 +70,11 @@
       url(./assets/fonts/PlayfairDisplay-VariableFont_wght.ttf)
         format("truetype");
   }
+  @font-face {
+    font-family: "Roboto";
+    src: local("Roboto"),
+      url(./assets/fonts/Roboto-Medium.ttf) format("truetype");
+  }
   h1 {
     margin-top: 0;
     font-size: 36px !important;
@@ -78,6 +82,7 @@
     font-style: normal;
     line-height: 1.333;
     font-size: 100%;
+    font-family: Playfair, Helvetica, Arial, sans-serif;
   }
 
   h2 {
@@ -86,18 +91,66 @@
     font-style: normal;
     line-height: 1.333;
     font-size: 100%;
+    font-family: Playfair, Helvetica, Arial, sans-serif;
   }
+  p {
+    font-size: 20px;
+  }
+
   body {
     margin: 0;
   }
+
   section {
     padding: 60px 25px;
   }
+
   main {
     height: 100vh;
   }
+
+  .btn {
+    padding: 10px 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    background: transparent;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    border: 2px solid #000;
+    z-index: 1;
+    font-size: 15px;
+  }
+
+  /**** BTN No. 12 ****/
+  .btn {
+  }
+  .btn:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: #000;
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    color: #fff;
+  }
+  .btn:hover:after {
+    top: 0;
+    height: 100%;
+  }
+  .btn:active {
+    top: 2px;
+  }
+
   #app {
-    font-family: Playfair, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Playfair, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;

@@ -68,5 +68,6 @@
     font-weight: 400;
     font-style: normal;
     line-height: 1.333;
+    font-family: Playfair, Helvetica, Arial, sans-serif;
   }
 </style>
