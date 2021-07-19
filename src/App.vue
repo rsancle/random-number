@@ -11,13 +11,13 @@
     </section>
     <ul>
       <li v-if="!showRandom">
-        <button @click="toggle('showRandom')">Codi</button>
+        <button @click="toggle('showRandom')">El Codi</button>
       </li>
       <li v-if="!showMembers">
-        <button @click="toggle('showMembers')">Amics</button>
+        <button @click="toggle('showMembers')">Els Amics</button>
       </li>
       <li v-if="!showSpeach">
-        <button @click="toggle('showSpeach')">Discurs</button>
+        <button @click="toggle('showSpeach')">El Discurs</button>
       </li>
     </ul>
   </main>
