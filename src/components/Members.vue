@@ -9,11 +9,12 @@
 <script>
   export default {
     name: "Members",
+    emits: ["addColor"],
     props: {
       members: Array,
     },
     mounted() {
-      this.$emit("addColor");
+      this.$emit("addColor", "default");
     },
   };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <h1>El Codi</h1>
+  <h1>El Discurs</h1>
   <h2>{{ speech.title }}</h2>
   {{ speech.body }}
 </template>
@@ -10,8 +10,9 @@
     props: {
       speech: Object,
     },
+    emits: ["addColor"],
     mounted() {
-      this.$emit("addColor");
+      this.$emit("addColor", "default");
     },
   };
 </script>

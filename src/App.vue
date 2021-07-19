@@ -1,13 +1,13 @@
 <template>
-  <main id="app">
+  <main :class="backgroundClass">
     <section v-if="showRandom">
-      <RandomCode :code="code" />
+      <RandomCode :code="code" @add-color="addColor" />
     </section>
     <section v-if="showMembers">
-      <Members :members="members.sort()" />
+      <Members :members="members.sort()" @add-color="addColor" />
     </section>
     <section v-if="showSpeach">
-      <Speech :speech="speech" />
+      <Speech :speech="speech" @add-color="addColor" />
     </section>
     <ul>
       <li v-if="!showRandom">
@@ -27,9 +27,6 @@
   import RandomCode from "./components/RandomCode.vue";
   import Members from "./components/Members.vue";
   import Speech from "./components/Speech.vue";
-  /* import CodeData from "./data/code.json";
-  import SpeechData from "./data/speech.json";
-  import MembersData from "./data/members.json"; */
 
   export default {
     name: "App",
@@ -49,6 +46,7 @@
         showRandom: true,
         showMembers: false,
         showSpeach: false,
+        backgroundClass: "background-default",
       };
     },
     methods: {
@@ -58,6 +56,9 @@
         this.showMembers = false;
         this.showSpeach = false;
         this[button] = value;
+      },
+      addColor(color) {
+        this.backgroundClass = "background-" + color;
       },
     },
   };
@@ -71,6 +72,7 @@
         format("truetype");
   }
   h1 {
+    margin-top: 0;
     font-size: 36px !important;
     font-weight: 400;
     font-style: normal;
@@ -85,13 +87,21 @@
     line-height: 1.333;
     font-size: 100%;
   }
+  body {
+    margin: 0;
+  }
+  section {
+    padding: 60px 25px;
+  }
+  main {
+    height: 100vh;
+  }
   #app {
     font-family: Playfair, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
   }
   ul {
     list-style-type: none;
@@ -100,5 +110,24 @@
   li {
     display: inline-block;
     margin: 0 10px;
+  }
+  .background-default {
+    background: #f5e3b1;
+  }
+
+  .background-green {
+    opacity: 1;
+    animation: fade 3s ease-in;
+    background: #f5e3b1;
+  }
+  @keyframes fade {
+    0%,
+    100% {
+      background: #f5e3b1;
+    }
+    25%,
+    75% {
+      background: #bff5b1;
+    }
   }
 </style>

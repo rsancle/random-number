@@ -4,7 +4,7 @@
     El següent generador de números us ajudarà a desxifrar el codi que us
     proporcionarà accès al nostre apreciat regal
   </p>
-  <span>{{ randomNumber }}</span>
+  <span class="number">{{ randomNumber }}</span>
 </template>
 
 <script>
@@ -13,6 +13,7 @@
     props: {
       code: Array,
     },
+    emits: ["addColor"],
     data() {
       return {
         randomNumber: 0,
@@ -48,12 +49,12 @@
         this.codeIntervalCallback = setInterval(() => {
           clearInterval(this.randomIntervalCallback);
           this.randomNumber = this.getRandomFromList(this.code);
-          this.$emit("addGreen");
+          this.$emit("addColor", "green");
           setTimeout(() => {
-            this.$emit("clearGreen");
+            this.$emit("addColor", "default");
             this.randomInterval();
-          }, 2000);
-        }, 5000);
+          }, 3000);
+        }, 8000);
       },
     },
   };
@@ -61,18 +62,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h3 {
-    margin: 40px 0 0;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #42b983;
+  .number {
+    font-size: 50px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.333;
   }
 </style>
