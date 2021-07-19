@@ -1,5 +1,18 @@
 <template>
   <main :class="backgroundClass">
+    <nav>
+      <ul>
+        <li>
+          <button class="btn" @click="toggle('showRandom')">El Codi</button>
+        </li>
+        <li>
+          <button class="btn" @click="toggle('showMembers')">Els Amics</button>
+        </li>
+        <li>
+          <button class="btn" @click="toggle('showSpeach')">El Discurs</button>
+        </li>
+      </ul>
+    </nav>
     <section v-if="showRandom">
       <RandomCode :code="code" @add-color="addColor" />
     </section>
@@ -9,17 +22,6 @@
     <section v-if="showSpeach">
       <Speech :speech="speech" @add-color="addColor" />
     </section>
-    <ul>
-      <li>
-        <button class="btn" @click="toggle('showRandom')">El Codi</button>
-      </li>
-      <li>
-        <button class="btn" @click="toggle('showMembers')">Els Amics</button>
-      </li>
-      <li>
-        <button class="btn" @click="toggle('showSpeach')">El Discurs</button>
-      </li>
-    </ul>
   </main>
 </template>
 
@@ -100,9 +102,11 @@
   body {
     margin: 0;
   }
-
+  nav {
+    padding: 40px 25px 20px;
+  }
   section {
-    padding: 60px 25px;
+    padding: 20px 25px;
   }
 
   main {
@@ -123,8 +127,6 @@
     z-index: 1;
     font-size: 15px;
   }
-
-  /**** BTN No. 12 ****/
   .btn {
   }
   .btn:after {
@@ -167,7 +169,6 @@
   .background-default {
     background: #f5e3b1;
   }
-
   .background-green {
     opacity: 1;
     animation: fade 3s ease-in;
