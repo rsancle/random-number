@@ -103,7 +103,7 @@
     margin: 0;
   }
   nav {
-    padding: 40px 25px 20px;
+    padding: 20px 25px 20px;
   }
   section {
     padding: 20px 25px;
@@ -114,6 +114,7 @@
   }
 
   .btn {
+    margin-top: 20px;
     padding: 10px 25px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
@@ -123,11 +124,9 @@
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    border: 2px solid #000;
+    border: 2px solid #2c3e50;
     z-index: 1;
     font-size: 15px;
-  }
-  .btn {
   }
   .btn:after {
     position: absolute;
@@ -137,7 +136,7 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    background: #000;
+    background: #2c3e50;
     transition: all 0.3s ease;
   }
   .btn:hover {
