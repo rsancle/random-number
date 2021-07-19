@@ -2,7 +2,8 @@
   <h1>El Codi</h1>
   <p>
     El següent generador de números us ajudarà a desxifrar el codi que us
-    proporcionarà accès al nostre apreciat regal
+    proporcionarà accès al nostre apreciat regal. Un cop els tingueu tots, els
+    haureu d'ordenar per trobar la combinació correcta:
   </p>
   <span class="number">{{ randomNumber }}</span>
 </template>
