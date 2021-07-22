@@ -1,7 +1,6 @@
 <template>
   <h1>El Discurs</h1>
-  <h2>{{ speech.title }}</h2>
-  {{ speech.body }}
+  <div v-html="speech.body" class="speech-body"></div>
 </template>
 
 <script>
@@ -18,4 +17,9 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+  .speech-body {
+    padding: 0 25%;
+    text-align: left;
+  }
+</style>
