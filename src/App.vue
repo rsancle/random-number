@@ -1,5 +1,6 @@
 <template>
   <main :class="backgroundClass">
+    <img class="logo" src="@/assets/logo.svg" alt="" srcset="" />
     <nav>
       <ul>
         <li>
@@ -167,6 +168,10 @@
   }
   .background-default {
     background: #f5e3b1;
+  }
+  .logo {
+    max-width: 100px;
+    margin-top: 20px;
   }
   .background-green {
     opacity: 1;
