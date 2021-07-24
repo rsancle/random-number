@@ -70,4 +70,12 @@
     line-height: 1.333;
     font-family: Playfair, Helvetica, Arial, sans-serif;
   }
+  p {
+    padding: 0 25px;
+  }
+  @media (min-width: 900px) {
+    p {
+      padding: 0 25%;
+    }
+  }
 </style>

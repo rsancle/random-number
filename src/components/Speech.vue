@@ -209,7 +209,12 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .speech-body {
-    padding: 0 25%;
+    padding: 0 25px;
     text-align: left;
+  }
+  @media (min-width: 900px) {
+    .speech-body {
+      padding: 0 25%;
+    }
   }
 </style>
