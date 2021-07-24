@@ -93,7 +93,8 @@
       fora) per fer les cl&agrave;ssiques &ldquo;bravinhes&rdquo;, les pizzes
       amb oli picant (amb molta salsa picant..), la carbonyesa... els
       llan&ccedil;aments a la mini canasta a la teva habitaci&oacute; o els xuts
-      sa porteria al teu menjador.d Otqsga
+      la porteria al teu menjador sense oblidar els bailoteos màgics a ritme de
+      bongo bongo de Manu Chao
     </p>
 
     <p>
