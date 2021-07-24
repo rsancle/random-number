@@ -189,7 +189,7 @@
 
     <p>Atentament els teus amics.</p>
 
-    <p>Crit &uacute;ltim per acabar: &ldquo;Visca els nuvis!!!&rdquo;</p>
+    <p>Visca els nuvis!!!</p>
   </div>
 </template>
 
